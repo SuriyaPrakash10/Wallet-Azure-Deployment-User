@@ -23,7 +23,7 @@ jobs:
 
       # Build Docker image
       - name: Build image
-        run: docker build -t ewalletapp.azurecr.io/user-service:latest
+        run: docker build -t ewalletapp.azurecr.io/user-service:latest .
 
       # Push Docker image
       - name: Push image
