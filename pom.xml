@@ -61,6 +61,13 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- Azure Key Vault -->
+        <dependency>
+            <groupId>com.azure.spring</groupId>
+            <artifactId>spring-cloud-azure-starter-keyvault-secrets</artifactId>
+            <version>5.10.0</version>
+        </dependency>
+
     </dependencies>
 
     <build>
