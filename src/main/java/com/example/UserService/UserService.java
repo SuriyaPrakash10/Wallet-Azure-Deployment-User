@@ -1,5 +1,6 @@
 package com.example.UserService;
 
+import com.example.UserApp;
 import com.example.UserDto.CreateUserRequestDto;
 import com.example.UserDto.UserDto;
 import com.example.UserEntity.UserEntity;
@@ -20,8 +21,8 @@ public class UserService {
 
 //    @Autowired private UserCacheRepository cacheRepository;
 
-    @Autowired
-    private UserRepository userRepository;
+//    @Autowired
+//    private UserRepository userRepository;
 
 //    @Autowired
 //    KafkaTemplate<String,String> kafkaTemplate;
@@ -32,7 +33,7 @@ public class UserService {
         userEntity.setAge(newUser.getAge());
         userEntity.setName(newUser.getName());
         userEntity.setPhone(newUser.getPhone());
-        userRepository.save(userEntity);
+//        userRepository.save(userEntity);
 /*        JSONObject userObj = new JSONObject();
         userObj.put("phone",newUser.getPhone());
         userObj.put("name",newUser.getName());
@@ -42,12 +43,12 @@ public class UserService {
 
     public UserEntity get(Integer userId) throws Exception {
 //        UserEntity user = cacheRepository.get(userId);
-        UserEntity user = userRepository.findById(userId).orElseThrow(Exception::new);
-        if (!ObjectUtils.isEmpty(user)) {
-            return user;
-        }
+//        UserEntity user = userRepository.findById(userId).orElseThrow(Exception::new);
+//        if (!ObjectUtils.isEmpty(user)) {
+            return UserEntity.builder().build();
+//        }
         /*user = userRepository.findById(userId).orElseThrow(Exception::new);
         cacheRepository.set(user);*/
-        return user;
+//        return user;
     }
 }
