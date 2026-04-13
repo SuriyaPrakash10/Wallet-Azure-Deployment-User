@@ -25,6 +25,12 @@ jobs:
       - name: Build image
         run: docker build -t ewalletapp.azurecr.io/user-service:latest .
 
+      # ADD THIS
+      - name: Verify jar manifest
+        run: |
+          docker run --rm --entrypoint sh ewalletapp.azurecr.io/user-service:latest \
+          -c "jar tf app.jar | grep -i manifest"    
+
       # Push Docker image
       - name: Push image
         run: docker push ewalletapp.azurecr.io/user-service:latest
