@@ -19,7 +19,7 @@ WORKDIR /app
 #COPY --from=builder /app/UserApplication/target/*.jar app.jar
 
 #Single module
-COPY --from=builder /app/target/*.jar app.jar
+COPY --from=builder /app/target/UserApplication-0.0.1-SNAPSHOT.jar app.jar
 
 EXPOSE 8080
 
